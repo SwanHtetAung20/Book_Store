@@ -1,0 +1,32 @@
+amazon:
+  aws:
+    accessKey: wns9fk
+    region: us-east-2
+    secretKey: kt8bro
+  dynamodb:
+    endpoint: http://localhost:8000
+spring:
+  application:
+    name: shopping-books
+  mail:
+    host: your host
+    port: 587
+    username: your email
+    password: your email password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+      protocol: smtp
+
+application:
+  mailing:
+    activate-url: http://localhost:3000/activate-account
+  security:
+    jwt:
+      secretKey: 4jFxrPzX45Lz/QMciEhES63G+s4pL48erA06U90vT5I=
+      expiration: 86400000
+server:
+  port: 8081

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Activation</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 600px;
+        margin: 10px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .activation-code {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .activation-link {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Purchased Request Acceptance</h1>
+  <p class="greeting" th:text="'Hello ' + ${username} + ','"></p>
+  <p>Firstly, Thank you for choosing us And we would like to inform you that your request is already successfully approved and your goods will be arrived within 3 days.! Thanks.</p>
+  <div class="activation-code"><span th:text="' Book Name ' + ${activation_code}"></span></div>
+  <div class="activation-link">
+    <div>
+      <p>Here is your invoice...</p>
+    </div>
+    <img th:src="${confirmationUrl}" alt="request_cancel">
+  </div>
+</div>
+</body>
+</html>

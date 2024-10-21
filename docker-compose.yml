@@ -1,0 +1,31 @@
+# services:
+#   dynamodb:
+#     container_name: dynamo-db
+#     image: amazon/dynamodb-local
+#     environment:
+#       AWS_ACCESS_KEY_ID: local
+#       AWS_SECRET_ACCESS_KEY: local
+#       AWS_REGION: us-east-2
+#     volumes:
+#       - dynamodb:/data/dynamodb
+#     ports:
+#       - "8001:8000"
+#     networks:
+#       - spring-dynamodb
+#     restart: unless-stopped
+#  spring-book:
+#    container_name: spring-shopping-books
+#    image: spring/shopping-books
+#    ports:
+#      - "8081:8081"
+#    networks:
+#      - spring-dynamodb
+#    depends_on:
+#      - dynamodb
+
+# networks:
+#   spring-dynamodb:
+#     driver: bridge
+# volumes:
+#   dynamodb:
+#     driver: local
